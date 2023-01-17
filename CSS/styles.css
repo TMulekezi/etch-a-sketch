@@ -46,9 +46,57 @@ main {
 
 .menu {
     background-color: rgb(3, 1, 19);
-    height: 532px;
+    height: 550px;
     width: 250px;
     text-align: center;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 0;  
+}
+
+.tools {
+    height: 400px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+}
+
+.color-selections {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 1px;
     
+}
+
+.colors {
+    display: flex;
+    justify-content: space-around;
+}
+
+.color-selection {
+    height: 20px;
+    width: 20px;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.white {
+    background-color: aliceblue;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    margin: auto;
+    justify-self: end;
 }

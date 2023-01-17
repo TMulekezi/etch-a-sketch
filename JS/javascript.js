@@ -6,6 +6,16 @@ const page = document.querySelector(".container");
 const selection = document.querySelector("select");
 selection.addEventListener('click', handleSelection);
 
+let color = "red";
+
+const colors = document.querySelectorAll(".color-selection");
+colors.forEach(element => element.addEventListener("click", setColor));
+
+const reset = document.querySelector("button");
+reset.addEventListener("click", e => clearGrid());
+
+
+
 // function handleSelection(e) {
 //     let dimension = parseInt(this.getAttribute("value"));
 //     console.log(dimension);
@@ -19,10 +29,7 @@ function handleSelection(e) {
 }
 
 function createGrid(dimension) {
-    const container = document.querySelector(".container");
-    while (container.firstChild) {
-        container.removeChild(container.lastChild);
-    }
+    clearGrid();
 
     let boxHeight = (550 - (2 * (dimension - 1) + 2))/dimension;
     let boxWidth = boxHeight;
@@ -41,10 +48,24 @@ function createGrid(dimension) {
 
 function changeColor(e) {
     const tile = this;
-    tile.style.background = "white";
+    tile.style.background = color;
     console.log("hello");
 }
 
 
+function setColor(e) {
+    let text = this.getAttribute("class");
+    const parts = text.split(" ");
+    let tempColor = parts[1];
+    color = tempColor;
 
+    
+}
+
+function clearGrid() {
+    const container = document.querySelector(".container");
+    while (container.firstChild) {
+        container.removeChild(container.lastChild);
+    }
+}
 
